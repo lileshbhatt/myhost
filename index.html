@@ -1,25 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head style="color: red;">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Registration</title>
 </head>
-<body style="color: rgb(2350, 11, 11);">
+<body>
 
-<h2 style="color: tomato;">simple registration form</h2>
+<h2>Student Registration Form</h2>
 
-<form action="index.php" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <label for="name">Name:</label><br>
   <input type="text" id="name" name="name"><br>
   <label for="email">Email:</label><br>
   <input type="email" id="email" name="email"><br><br>
-  <label for="mobileNo">mobileNo:</label><br>
+  <label for="mobileNo">Mobile Number:</label><br>
   <input type="text" id="mobileNo" name="mobileNo"><br>
   <input type="submit" value="Submit">
-
 </form> 
+
+<!-- Include PHP code here -->
 
 </body>
 </html>
