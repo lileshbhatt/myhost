@@ -18,25 +18,15 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $mobileNo = $_POST['mobileNo'];
 
-// Insert data into employee table
-$sql_users = "INSERT INTO users (name, email , mobileNo) VALUES ('$name', '$email', '$mobileNo')";
+// Insert data into database
+$sql = "INSERT INTO users (name, email, mobileNo) VALUES ('$name', '$email', '$mobileNo')";
 
-if ($conn->query($sql_users) === TRUE) {
-  echo "Data inserted into users table successfully!<br>";
+if ($conn->query($sql) === TRUE) {
+  echo "Data inserted successfully!";
 } else {
-  echo "Error: " . $sql_users . "<br>" . $conn->error;
-}
-
-// Insert data into students table
-$sql_admin = "INSERT INTO admin (name, email,mobileNo) VALUES ('$name', '$email','$mobileNo')";
-
-if ($conn->query($sql_admin) === TRUE) {
-  echo "Data inserted into admin table successfully!";
-} else {
-  echo "Error: " . $sql_admin . "<br>" . $conn->error;
+  echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 // Close connection
 $conn->close();
 ?>
-
